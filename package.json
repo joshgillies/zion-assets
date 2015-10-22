@@ -1,0 +1,32 @@
+{
+  "name": "zion-assets",
+  "version": "0.0.0",
+  "description": "Asset helpers for the Zion framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshgillies/zion-assets.git"
+  },
+  "keywords": [
+    "zion",
+    "assets",
+    "matrix",
+    "squiz",
+    "my",
+    "source",
+    "mysource"
+  ],
+  "author": "Josh Gillies <npm@joshgilli.es> (http://joshgilli.es/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshgillies/zion-assets/issues"
+  },
+  "homepage": "https://github.com/joshgillies/zion-assets#readme",
+  "dependencies": {
+    "isarray": "0.0.1",
+    "node-matrix-assets": "joshgillies/node-matrix-assets"
+  }
+}
