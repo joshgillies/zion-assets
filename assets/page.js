@@ -26,11 +26,23 @@ module.exports = function context (asset) {
     }
 
     return asset('page_standard', opts, [
-      asset('bodycopy', { link: 'type_2', dependant: '1', exclusive: '1' }, [
+      asset('bodycopy', {
+        link: 'type_2',
+        attributes: {
+          'layout_type': 'none',
+          'desc': '',
+          'css_class': '',
+          'content_type': 'content_type_raw_html',
+          'disable_keywords': '',
+          'dir': ''
+        },
+        dependant: '1'
+      }, [
         asset('bodycopy_div', { link: 'type_2', dependant: '1' }, [
-          asset('content_type_wysiwyg', { id: 'test', dependant: '1', exclusive: '1' })
+          asset('content_type_wysiwyg', { link: { type_2: 'div_contents' }, dependant: '1', exclusive: '1' })
         ])
       ].concat(children))
     ])
   }
 }
+
