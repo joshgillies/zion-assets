@@ -17,6 +17,10 @@ module.exports = function context (asset) {
       children = [].slice.call(arguments, 2)
     }
 
+    if (!opts) {
+      opts = {}
+    }
+
     if (!opts.name) {
       opts.name = name
     }

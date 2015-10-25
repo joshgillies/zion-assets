@@ -1,3 +1,5 @@
+var isArray = require('isarray')
+
 module.exports = function context (asset) {
   return function folder (name, opts, children) {
     if (typeof name !== 'string') {
@@ -6,12 +8,17 @@ module.exports = function context (asset) {
       name = undefined
     }
 
-    if (!opts) {
-      opts = {}
+    if (opts && opts.type) {
+      children = [].slice.call(arguments, 1)
+      opts = undefined
     }
 
-    if (!children) {
-      children = []
+    if (!isArray(children)) {
+      children = [].slice.call(arguments, 2)
+    }
+
+    if (!opts) {
+      opts = {}
     }
 
     if (!opts.name) {
