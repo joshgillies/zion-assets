@@ -28,4 +28,3 @@ module.exports = function context (asset) {
     return asset('site', opts, children)
   }
 }
-

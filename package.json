@@ -28,5 +28,9 @@
   "dependencies": {
     "isarray": "0.0.1",
     "node-matrix-assets": "joshgillies/node-matrix-assets"
+  },
+  "devDependencies": {
+    "standard": "^5.3.1",
+    "tape": "^4.2.2"
   }
 }
