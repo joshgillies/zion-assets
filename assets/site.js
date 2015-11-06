@@ -8,6 +8,11 @@ module.exports = function context (asset) {
       name = undefined
     }
 
+    if (isArray(opts)) {
+      children = opts
+      opts = undefined
+    }
+
     if (opts && opts.type) {
       children = [].slice.call(arguments, 1)
       opts = undefined
