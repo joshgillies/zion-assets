@@ -1,25 +1,10 @@
-var isArray = require('isarray')
-
 module.exports = function context (asset) {
-  return function site (name, opts, children) {
+  var base = require('./base')(asset)
+
+  return function site (name, opts) {
     if (typeof name !== 'string') {
-      children = opts
       opts = name
       name = undefined
-    }
-
-    if (isArray(opts)) {
-      children = opts
-      opts = undefined
-    }
-
-    if (opts && opts.type) {
-      children = [].slice.call(arguments, 1)
-      opts = undefined
-    }
-
-    if (!isArray(children)) {
-      children = [].slice.call(arguments, 2)
     }
 
     if (!opts) {
@@ -30,6 +15,6 @@ module.exports = function context (asset) {
       opts.name = name
     }
 
-    return asset('site', opts, children)
+    return base.apply(null, ['site', opts].concat(Array.prototype.slice.call(arguments, 2)))
   }
 }
