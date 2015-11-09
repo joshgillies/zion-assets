@@ -1,7 +1,7 @@
 module.exports = function context (asset) {
-  var base = require('./base')(asset)
+  var base = require('../base')(asset)
 
-  return function site (name, opts) {
+  return function folder (name, opts) {
     if (typeof name !== 'string') {
       opts = name
       name = undefined
@@ -15,6 +15,6 @@ module.exports = function context (asset) {
       opts.name = name
     }
 
-    return base.apply(null, ['site', opts].concat(Array.prototype.slice.call(arguments, 2)))
+    return base.apply(null, ['folder', opts].concat(Array.prototype.slice.call(arguments, 2)))
   }
 }
