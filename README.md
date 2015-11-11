@@ -12,3 +12,7 @@ The following assets can be created and configured using `var assets = require('
   * [Page](assets/page)
   * [Folder](assets/folder)
   * [Site](assets/site)
+
+## License
+
+MIT
