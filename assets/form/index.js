@@ -1,6 +1,4 @@
 module.exports = function context (asset) {
-  var base = require('../base')(asset)
-
   return function form (name, opts) {
     if (typeof name !== 'string') {
       opts = name
@@ -15,6 +13,8 @@ module.exports = function context (asset) {
       opts.name = name
     }
 
-    return base.apply(null, ['page_custom_form', opts].concat(Array.prototype.slice.call(arguments, 2)))
+    return asset('page_custom_form', opts, [
+      asset('form_email', { link: 'type_2', name: 'Form Contents' dependant: '1', exclusive: '1' })
+    ])
   }
 }
